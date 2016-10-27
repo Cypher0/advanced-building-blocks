@@ -88,37 +88,3 @@ end
 def multiply_els(array)
 		array.my_inject{ |result, element| result * element }
 end
-
-["A", "b", 1, 2].my_each do |elmnt|
-	puts elmnt
-end
-
-["A", "b", 1, 2].my_each_with_index do |elmnt, indx|
-	puts "#{indx}. #{elmnt}"
-end
-
-puts ["A", "b", 1, 2].my_select { |elmnt| elmnt.is_a? Integer }
-
-puts ["A", "b", 1, 2].my_all?  { |elmnt| elmnt.is_a? Integer }
-puts [1, 2].my_all?  { |elmnt| elmnt.is_a? Integer }
-
-puts ["A", "b", 1, 2].my_any?  { |elmnt| elmnt.is_a? Integer }
-puts ["A", "b"].my_any?  { |elmnt| elmnt.is_a? Integer }
-
-puts ["A", "b", 1, 2].my_none?  { |elmnt| elmnt.is_a? Integer }
-puts ["A", "b"].my_none?  { |elmnt| elmnt.is_a? Integer }
-
-puts ["A", "b", 1, 2].my_count { |elmnt| elmnt.is_a? Integer}
-puts ["A", "b", 1, 2].my_count
-
-puts [10, 20, 1, 2].my_map { |elmnt| elmnt + 9}
-
-puts multiply_els([2,4,5])
-
-power = Proc.new do |i|
-	i ** 2
-end
-
-puts [10, 20, 1, 2].my_map(&power)
-
-puts [10, 20, 1, 2].my_map { |elt| elt ** 3 }
